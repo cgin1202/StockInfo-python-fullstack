@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',     # 서브 앱으로 'main' 추가
+    'main',         # 서브 앱으로 'main' 추가
 
 ]
 
@@ -59,10 +59,15 @@ WSGI_APPLICATION = 'webservice.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'stock',
+        'USER': 'seungjin',
+        'PASSWORD': 'qwer1234',
+        'HOST': 'webservice.crz5o4jcflq6.us-east-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 
