@@ -59,11 +59,14 @@ for i in low_value:
 
 <br>
 <br>
+
 ## 추가사항
 
 - 그래프 : TABLE에 있는 모든 Symbol들에 대해서 하루에 사고 팔고의 max_profit, min_profit 을 그래프로 시각화한 것
+
 <br>
 <br>
+
 
 ## 제한사항
 
