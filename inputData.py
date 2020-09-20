@@ -97,7 +97,7 @@ def insertData(list, conn):
 # DB 연결
 
 def dbConnection():
-    conn = pymysql.connect(host='webservice.crz5o4jcflq6.us-east-2.rds.amazonaws.com', user='seungjin', password='qwer1234', db='stock')
+    conn = pymysql.connect(host='**************', user='**************', password='**************', db='**************')
     return conn;
 
 # 시간 체크 하는 모듈 (INSERT 하는 데에 걸리는 시간 체크용)
