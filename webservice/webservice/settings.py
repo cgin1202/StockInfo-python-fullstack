@@ -108,4 +108,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# 이미지, CSV 파일 저장 경로 설정
+
 STATIC_URL = '/static/'

@@ -5,41 +5,86 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=divice-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <!-- Load c3.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css"/>
+        <!-- Load bootstrap.css -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- Load bootstrap.js -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <!-- Load d3.js and c3.js -->
+        <script src="https://d3js.org/d3.v3.min.js"></script>     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+        
         <title>Document</title>
     </head>
 
     <body>
         {% csrf_token %}
         <div class="container" style="text-align:center; padding-top:5%; padding-bottom: 5%;">
-        <h1>US Stock</h1>
+            <h1>US Stock - NASDAQ</h1>
         </div>
         <div class="container" style="padding-bottom:5%;">
+        <div class="container" style="text-align:center; padding-bottom:5%;">
+            <h3>Daily Benefit Graph</h3>
+        <div>
+        <div class="container" style="padding-bottom:5%;">
+          <div id="linechart">
+
+          </div>
+        </div>
+        <div class="container" style="text-align:center; padding-bottom:5%;">
+          <h3>Get Max Profit Table</h3>
+        <div>
         <table class="table table-hover">
             <thead>
               <tr>
                 <th>Symbol</th>
-                <th>Avg Count</th>
                 <th>Max Profit</th>
-                <th>Min Profit</th>
-                <th>Avg Value</th>
+                <th>Buy Date</th>
+                <th>Sell Date</th>
               </tr>
             </thead>
             <tbody>
               {% for stock in stocks %}
               <tr>
                   <td>{{ stock.symbol }}</td>
-                  <td>{{ stock.avg_volume }}</td>
                   <td>{{ stock.max_profit }}</td>
-                  <td>{{ stock.min_profit }}</td>
-                  <td>{{ stock.avg_value }}</td>
+                  <td>{{ stock.buy_date }}</td>
+                  <td>{{ stock.sell_date }}</td>
                 </tr>
               {% endfor %}
             </tbody>
           </table>
         </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    </body>
+
+    
+    <script>
+      var chart = c3.generate({
+          bindto: "#linechart",
+          data: {
+              x: 'x',
+              url : '/static/us_stock.csv'
+          },
+          axis:{
+            x:{
+              type:'category',
+              show : false
+            },
+            y:{
+              max:10,
+              min:0
+            }
+          },
+          point:{
+            show:false
+          },
+          subchart:{
+            show:false
+          }
+      });
+    </script>
+  </body>
 </html>

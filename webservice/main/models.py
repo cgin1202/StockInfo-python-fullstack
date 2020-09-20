@@ -2,6 +2,9 @@ from django.db import models
 
 # Create your models here.
 
+# Python Django ORM
+# AWS RDS의 US_Stock TABLE과 매핑
+
 class US_Stock(models.Model):
     id=models.BigIntegerField(primary_key=True)
     symbol=models.CharField(max_length=50)
