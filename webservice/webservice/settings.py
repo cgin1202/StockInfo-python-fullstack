@@ -63,11 +63,11 @@ WSGI_APPLICATION = 'webservice.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'stock',
-        'USER': 'seungjin',
-        'PASSWORD': 'qwer1234',
-        'HOST': 'webservice.crz5o4jcflq6.us-east-2.rds.amazonaws.com',
-        'PORT': '3306'
+        'NAME': '*****',
+        'USER': '******',
+        'PASSWORD': '******',
+        'HOST': '******',
+        'PORT': '******'
     }
 }
 
