@@ -90,7 +90,7 @@ def insertData(list, conn):
     conn.close()
 
 def dbConnection():
-    conn = pymysql.connect(host='webservice.crz5o4jcflq6.us-east-2.rds.amazonaws.com', user='seungjin', password='qwer1234', db='stock')
+    conn = pymysql.connect(host='**************', user='**************', password='**************', db='**************')
     return conn;
 
 def testTime():
