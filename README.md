@@ -1,24 +1,17 @@
-# Get Max profit over the last 180 days
+# 주식 한 주를 사서 이득을 취할 수 있는 값 계산 사이트
 
 <br>
 
-## 요구조건
+## 참여자 및 참여 기간
 
-- data : US Stock Symbol
-- only one single buy and sell
-- API, Business and data layer 분리
-- 재사용 가능한 Module
-- DB 수집 API 변경이 쉬운 Module로 구성
-
+- 최승진
+- 2020.09.18~2020.09.20
 
 <br>
 
-## 실행 방법
+## 토이 프로젝트 설명
 
-- version.txt에 있는데 패키지 설치
-- Anaconda prompt를 실행하고 > webservice 폴더 안으로 이동
-- 'python manage.py runserver' 명령어 입력
-- 브라우저 > 'http://127.0.0.1:8000/main ' url 입력
+- 특정 기간 동안 주식의 정보를 수집하여, 가장 큰 이득을 취할 수 있는 날을 출력하는 웹 사이트
 
 
 <br>
