@@ -53,6 +53,31 @@ for i in low_value:
 <br>
 <br>
 
+
+## 또 다른 알고리즘 (시간복잡도 : O(N))
+
+- 위의 알고리즘의 경우 사는 날의 기준으로 주식을 한 주를 사서 최대 이익을 낼 수 있는 파는 날을 찾는 과정이라면, 반대로 파는 날을 기준으로 보면 어떨까라는 생각에 생각한 알고리즘
+
+`````python
+
+def max_profit(prices):
+  n=len(prices)
+  max_profit=0
+  min_prices=prices[0]
+  
+  for i in range(1,n):
+    profit=pries[i]-min_prices
+    if(profit>max_profit):
+      max_profit=profit
+    if(pries[i]<min_price):
+      min_prices=prices[i]
+    
+   return max_profit
+```
+
+<br>
+<br>
+
 ## 추가사항
 
 - 그래프 : TABLE에 있는 모든 Symbol들에 대해서 하루에 사고 팔고의 max_profit, min_profit 을 그래프로 시각화한 것
@@ -69,11 +94,16 @@ for i in low_value:
   
 - 수많은 데이터에 대해서 처리를 하면서 발생하는 시간복잡도로 인하여 느린 웹 페이지 로딩 속도
   > Symbol 개수 1820개, DATA 개수 25만개
+  
   > Get Biggest Profit 시간복잡도 O(N^2)
+  
   > 여기에서 N : 126, 180일동안 Stock 개수 : 126
+  
   > 시간복잡도 = 126*126*1820 = 28,894,32 = 약 3천만
+  
   > 추가적으로 효율적인 알고리즘에 대해 고민 중
   
   
+      > 2번째로 생각한 알고리즘으로 시간복잡도 126*1820 = 100만
    
 
