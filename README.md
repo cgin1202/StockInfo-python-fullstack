@@ -58,7 +58,7 @@ for i in low_value:
 
 - 위의 알고리즘의 경우 사는 날의 기준으로 주식을 한 주를 사서 최대 이익을 낼 수 있는 파는 날을 찾는 과정이라면, 반대로 파는 날을 기준으로 보면 어떨까라는 생각에 생각한 알고리즘
 
-`````python
+```python
 
 def max_profit(prices):
   n=len(prices)
@@ -73,6 +73,7 @@ def max_profit(prices):
       min_prices=prices[i]
     
    return max_profit
+   
 ```
 
 <br>
