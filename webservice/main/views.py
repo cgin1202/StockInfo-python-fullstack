@@ -33,6 +33,36 @@ def to_integer(dt_time):
     return 10000*dt_time.year+100*dt_time.month+dt_time.day
 
 
+
+
+###############################################################
+# 슬라이딩 윈도우 알고리즘을 사용하여 minvalue를 수정하면서 maxprofit 구하기
+# 시간복잡도 = O(N)
+
+def max_profit2(date_list, highvalue_list, lowvalue_list):
+  n=len(highvalue_list)
+  buy_date=date_list[0]               # Profit 최대로 낼 수 있는 구매한 날
+  sell_date=date_list[0]                # Profit 최대로 낼 수 있는 판매한 날
+  getResult=[]
+  maxProfit=0
+  minPrice=lowvalue_list[0]
+  
+  for i in range(1,n):
+    profit=highvalue_list[i]-minPrice
+    if(profit>maxProfit):
+      maxProfit=profit
+      sell_data=date_list[i]
+    if(lowvalue_list[i]<minPrice):
+      minPrice=lowvalue_list[i]
+      buy_date=date_list[i]
+    
+  getResult.append(maxProfit)
+  getResult.append(buy_date)
+  getResult.append(sell_date)
+
+  return getResult
+
+
 ###############################################################
 # 현재 있는 low_value를 기준으로 가장 크게 profit을 얻을 수 있는 날을 확인하고, Max를 취하여 결과값 도출
 # 시간복잡도 N*N = O(N^2)
